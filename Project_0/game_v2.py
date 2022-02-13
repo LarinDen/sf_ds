@@ -1,25 +1,27 @@
 import random
 import numpy as np
 def random_predict(number:int=1)->int:
-    """Offense random number
-
+    """Guessing a random number with adjustment 
     Args:
         number (int, optional): Maked up number. Defaults to 1. 
-
     Returns:
         int: Number of tries
     """
 
     count = 0
+    left, right = 1, 101 # Setting the initial limits of the range 
 
     while True:
         count += 1
-        predict_number = np.random.randint(1, 101) # Estimated number
+        predict_number = np.random.randint(left, right) # Estimated number in range between the borders
         if predict_number == number:
             break # Exit from circle if we guessed
+        elif predict_number < number:
+            left = predict_number # Setting new left border 
+        elif predict_number > number:
+            right = predict_number # Setting new right border
     return(count)
 
-#print(f'Количество попыток: {random_predict()}')
 
 def score_game(random_predict)->int:
     """How many attempts on average for 1000 approaches our algrithm guesses
