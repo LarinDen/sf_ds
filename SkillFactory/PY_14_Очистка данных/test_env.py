@@ -1,0 +1,3 @@
+import numpy
+import ipykernel
+ipykernel.__version__
