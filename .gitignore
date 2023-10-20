@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 #Big files
-/home/headcrashed/IDE/Project_1/data/
+**/data/**/*
